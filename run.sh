@@ -11,6 +11,7 @@ input=$(echo "$rawInput" | awk '{print $8}')
 extension="${input##*.}"
 #this extracts the extention of file :- [js]
 #
+#
 file="${input##*/}"
 #this extracts the name of file :- [js]
 #

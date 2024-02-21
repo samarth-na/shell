@@ -25,7 +25,7 @@ alias lt3='exa --tree --level=4 --icons -a  -lBb --colour-scale'
 alias lt='exa --tree --level=2 --icons -a   -lBb --colour-scale'
 alias l='exa --icons'
 alias la='exa --icons -a'
-alias L='exa --icons -lah'
+alias L='exa --icons -lahBb --colour-scale'
 
 #--------------------------tmux----------------------------
 alias t='tmux'
@@ -40,14 +40,17 @@ alias livehost='npm run dev -- -H 192.168.1.8'
 alias zshs='source ~/.zshrc'
 
 #-------------------runners--------------------------
+#
 alias gp='g++'
 alias pp='g++'
 alias cc'gcc'
 alias g.='go run .'
 alias py='python'
+alias cct= 'codecrafters test'
 #-------------------web-search------------
 alias pd="web_search phind "
 alias yt="youtube"
+alias px="web_search px"
 alias gpt="web_search gpt "
 #-----------------------------scripts-------------------------
 alias mdc='mcd() { mkdir "$@" && cd "$@" }; mcd'
@@ -55,6 +58,7 @@ alias mdc='mcd() { mkdir "$@" && cd "$@" }; mcd'
 setxkbmap -layout us -option ctrl:nocaps
 
 #---------------------------navigation-----------------------------
+alias obs="cd ~/obsidian/ && nvim "
 alias ef="fd --hidden --type f | fzf --reverse | xargs -o nvim"
 # alias sd='fd --hidden --type d | fzf --preview "exa -lah --icons {} "
 # '
@@ -73,6 +77,8 @@ alias play='find ~/Music -type f \( -name "*.mp3" -or -name "*.m4a" -or -name "*
 alias conf=' cd $( find ~/.config   -type d  |fzf --reverse --preview "lt -lBb --colour-scale {}"
 )'
 alias jd=' cd $( find -type d  |fzf-tmux -p --reverse  --preview "lt -lBb --colour-scale {}"
+)'
+alias jp=' cd $( find  ~/projects -type d  |fzf-tmux -p --reverse  --preview "lt -lBb --colour-scale {}"
 )'
 alias dnd=' cd $( find ~/Downloads -type d  |fzf --reverse --preview "lt -lBb --colour-scale {}"
 )'
@@ -100,13 +106,20 @@ alias fl2='fd --max-depth=2 |fzf --reverse '
 
 alias play='find ~/Music -type f \( -name "*.mp3" -or -name "*.m4a" -or -name "*.webm" \)| fzf-tmux --reverse -p |xargs -I {} vlc "{}"
 '
-
+alias ctp="
+ tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index}-#{window_name}-#{pane_current_path}' | fzf-tmux -p | cut -d "-" -f 1 |xargs tmux switch-client -t
+ "
 function tmuxswitch() {
  ct
 };
 zle -N tmuxswitch
-bindkey '^[t' tmuxswitch
+bindkey '^[d' tmuxswitch
 
+function paneswitch() {
+ ctp
+};
+zle -N paneswitch 
+bindkey '^[t' paneswitch
 
 
 pop()
