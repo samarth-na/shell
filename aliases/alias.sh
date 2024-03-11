@@ -2,7 +2,7 @@
 alias v='nvim'
 alias e='nvim'
 alias e.='nvim .'
-
+alias kn='killall nvim '
 #-----------------------------clear-------------------------
 alias c='clear'
 alias cl='clear'
@@ -35,8 +35,8 @@ alias ttop='tmux set -g status-position top'
 alias tbot='tmux set -g status-position bottom'
 
 #-------------------------liveserverhost-----------------------------
-alias host='npm run dev'
-alias livehost='npm run dev -- -H 192.168.1.8'
+alias host='bun run dev'
+alias livehost='bun run dev -- -H 192.168.1.8'
 alias zshs='source ~/.zshrc'
 
 #-------------------runners--------------------------
@@ -52,6 +52,7 @@ alias pd="web_search phind "
 alias yt="youtube"
 alias px="web_search px"
 alias gpt="web_search gpt "
+alias stack="stackoverflow"
 #-----------------------------scripts-------------------------
 alias mdc='mcd() { mkdir "$@" && cd "$@" }; mcd'
 
@@ -107,7 +108,7 @@ alias fl2='fd --max-depth=2 |fzf --reverse '
 alias play='find ~/Music -type f \( -name "*.mp3" -or -name "*.m4a" -or -name "*.webm" \)| fzf-tmux --reverse -p |xargs -I {} vlc "{}"
 '
 alias ctp="
- tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index}-#{window_name}-#{pane_current_path}' | fzf-tmux -p | cut -d "-" -f 1 |xargs tmux switch-client -t
+ tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index}.#{window_name}-#{pane_current_path}' | fzf-tmux -p | cut -d "." -f 1 |xargs tmux switch-client -t
  "
 function tmuxswitch() {
  ct

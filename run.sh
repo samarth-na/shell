@@ -32,9 +32,19 @@ case "$extension" in
     "out" )
         ./a.out
         ;;
+    "java")
+        java $input 
+        ;;
+    "lua" )
+        lua $input
+        ;;
+    "sh" )
+        bash $input
+        ;;
     *)
         echo "Unsupported file type"
         ;;
 esac
 #
+echo  -e "\n---x---"
 echo  -e "\n$file"

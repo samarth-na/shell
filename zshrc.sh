@@ -1,7 +1,7 @@
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
-
+export PATH=$PATH:/usr/bin
 export ZSH="$HOME/.oh-my-zsh"
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/amro.omp.json)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -190,3 +190,6 @@ if [ -f '/home/samna/google-cloud-sdk/path.zsh.inc' ]; then . '/home/samna/googl
 if [ -f '/home/samna/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/samna/google-cloud-sdk/completion.zsh.inc'; fi
 
 eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/home/samna/.bun/_bun" ] && source "/home/samna/.bun/_bun"
