@@ -43,6 +43,8 @@ case "$extension" in
         ;;
     *)
         echo "Unsupported file type"
+        echo  -e "\n$file"
+
         ;;
 esac
 #

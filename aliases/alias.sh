@@ -19,13 +19,13 @@ alias upd='sudo dnf update'
 alias ref='sudo dnf upgrade --refresh'
 alias upg='sudo dnf upgrade '
 
-#------------------------exa------------------------------
-alias lt2='exa --tree --level=3 --icons -a  -lBb --colour-scale'
-alias lt3='exa --tree --level=4 --icons -a  -lBb --colour-scale'
-alias lt='exa --tree --level=2 --icons -a   -lBb --colour-scale'
-alias l='exa --icons'
-alias la='exa --icons -a'
-alias L='exa --icons -lahBb --colour-scale'
+#------------------------eza------------------------------
+alias lt2='eza --tree --level=3 --icons -a  -lBb '
+alias lt3='eza --tree --level=4 --icons -a  -lBb '
+alias lt='eza --tree --level=2 --icons -a   -lBb '
+alias l='eza --icons'
+alias la='eza --icons -a'
+alias L='eza --icons -lahBb '
 
 #--------------------------tmux----------------------------
 alias t='tmux'
@@ -61,7 +61,7 @@ setxkbmap -layout us -option ctrl:nocaps
 #---------------------------navigation-----------------------------
 alias obs="cd ~/obsidian/ && nvim "
 alias ef="fd --hidden --type f | fzf --reverse | xargs -o nvim"
-# alias sd='fd --hidden --type d | fzf --preview "exa -lah --icons {} "
+# alias sd='fd --hidden --type d | fzf --preview "eza -lah --icons {} "
 # '
 alias epf=" fd --type f -H |fzf --reverse --preview 'bat --color=always --style=numbers --line-range=:100 {}'| xargs nvim {}
 
@@ -75,25 +75,25 @@ alias fl2='fd --max-depth=2 |fzf --reverse '
 
 alias play='find ~/Music -type f \( -name "*.mp3" -or -name "*.m4a" -or -name "*.webm" \)| fzf-tmux --reverse -p |xargs -I {} vlc "{}"
 '
-alias conf=' cd $( find ~/.config   -type d  |fzf --reverse --preview "lt -lBb --colour-scale {}"
+alias conf=' cd $( find ~/.config   -type d  |fzf --reverse --preview "lt -lBb  {}"
 )'
-alias jd=' cd $( find -type d  |fzf-tmux -p --reverse  --preview "lt -lBb --colour-scale {}"
+alias jd=' cd $( find -type d  |fzf-tmux -p --reverse  --preview "lt -lBb  {}"
 )'
-alias jp=' cd $( find  ~/projects -type d  |fzf-tmux -p --reverse  --preview "lt -lBb --colour-scale {}"
+alias jp=' cd $( find  ~/projects -type d  |fzf-tmux -p --reverse  --preview "lt -lBb  {}"
 )'
-alias dnd=' cd $( find ~/Downloads -type d  |fzf --reverse --preview "lt -lBb --colour-scale {}"
+alias dnd=' cd $( find ~/Downloads -type d  |fzf --reverse --preview "lt -lBb -- {}"
 )'
-alias proj=' cd $( find ~/projects -type d  |fzf --reverse --preview "lt -lBb --colour-scale {}"
+alias proj=' cd $( find ~/projects -type d  |fzf --reverse --preview "lt -lBb -- {}"
 )'
 alias econf='find ~/.config  -type f | fzf --reverse --preview "bat --color=always --style=numbers --line-range=:100 {}"|xargs nvim {}'
 
-alias cdd=' cd $( fd -H --type d --max-depth=1 |fzf-tmux --reverse -p -w --preview " exa -laBb --colour-scale --no-permissions --no-time --no-user {}")'
+alias cdd=' cd $( fd -H --type d --max-depth=1 |fzf-tmux --reverse -p -w --preview " eza -laBb  --no-permissions --no-time --no-user {}")'
 
 alias ct='
 tmux list-windows -a -F "#S:#I-#W" | fzf-tmux -p | cut -d "-" -f 1 | xargs tmux switch-client -t
 '
 alias ef="fd --hidden --type f | fzf --reverse | xargs -o nvim"
-# alias sd='fd --hidden --type d | fzf --preview "exa -lah --icons {} "
+# alias sd='fd --hidden --type d | fzf --preview "eza -lah --icons {} "
 # '
 alias epf=" fd --type f -H |fzf --reverse --preview 'bat --color=always --style=numbers --line-range=:100 {}'| xargs nvim {}
 
@@ -133,14 +133,14 @@ bindkey '^\' pop
 
 
 # fdd() {
-#   cd $(fd -H --type=d "$@" |fzf --preview " exa -laBb --colour-scale --no-permissions --no-time --no-user {}")
+#   cd $(fd -H --type=d "$@" |fzf --preview " eza -laBb  --no-permissions --no-time --no-user {}")
 # };
 
 # fdz() {
-#   fd -H --type=d "$!" | fzf --preview "exa -laBb --colour-scale --no-permissions --no-time --no-user {}"
+#   fd -H --type=d "$!" | fzf --preview "eza -laBb  --no-permissions --no-time --no-user {}"
 # }
 
 fld() {
-    cd $(fd -H --type=d "$1" | fzf --preview "exa -labB {}")
+    cd $(fd -H --type=d "$1" | fzf --preview "eza -labB {}")
 
 }
