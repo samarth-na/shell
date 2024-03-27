@@ -24,6 +24,7 @@ alias lt2='eza --tree --level=3 --icons -a  -lBb '
 alias lt3='eza --tree --level=4 --icons -a  -lBb '
 alias lt='eza --tree --level=2 --icons -a   -lBb '
 alias l='eza --icons'
+alias ls='eza --icons'
 alias la='eza --icons -a'
 alias L='eza --icons -lahBb '
 
