@@ -18,9 +18,6 @@ export PATH="/path/to/google-cloud-sdk/bin:$PATH"
 export PATH=$PATH:$HOME/.local/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 
 
