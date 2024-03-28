@@ -18,6 +18,10 @@ export PATH="/path/to/google-cloud-sdk/bin:$PATH"
 export PATH=$PATH:$HOME/.local/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export godk="
+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
+"
+alias gin='echo -n "$godk" | xclip -selection clipboard'
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -179,8 +183,8 @@ function web_search() {
 
 
 
-# bun 
 source ~/.zsh/aliases/alias.sh
+source ~/.zsh/aliases/gitlias.sh
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/samna/google-cloud-sdk/path.zsh.inc' ]; then . '/home/samna/google-cloud-sdk/path.zsh.inc'; fi

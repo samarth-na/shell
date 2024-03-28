@@ -26,7 +26,7 @@ alias lt='eza --tree --level=2 --icons -a   -lBb '
 alias l='eza --icons'
 alias ls='eza --icons'
 alias la='eza --icons -a'
-alias L='eza --icons -lahBb '
+alias L='eza --icons -lahBb --git '
 
 #--------------------------tmux----------------------------
 alias t='tmux'

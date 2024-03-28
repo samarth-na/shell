@@ -5,3 +5,4 @@ alias gp= 'git push'
 alias gl= 'git log'
 alias gs= 'git status'
 alias gco= 'git checkout'
+

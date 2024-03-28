@@ -13,9 +13,10 @@ extension="${input##*.}"
 #
 #
 file="${input##*/}"
-#this extracts the name of file :- [js]
-#
+#this extracts the name of file :- [arrays.js]
+filename="${file%.*}"
 #an switch statement for choosing the language and running the respective command
+
 case "$extension" in
     "py")
         python $input
@@ -41,12 +42,15 @@ case "$extension" in
     "sh" )
         bash $input
         ;;
+    "rs" )
+        rustc $input && ./$filename
+        ;;
     *)
         echo "Unsupported file type"
         echo  -e "\n$file"
 
         ;;
 esac
-#
+
 echo  -e "\n---x---"
 echo  -e "\n$file"
