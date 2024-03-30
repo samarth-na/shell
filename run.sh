@@ -52,5 +52,5 @@ case "$extension" in
         ;;
 esac
 
-echo  -e "\n---x---"
-echo  -e "\n$file"
+echo  -e "\n--- ---"
+echo  -e "\n$file "
