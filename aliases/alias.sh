@@ -1,3 +1,5 @@
+#-----------------------commands---------------------------
+alias info='info --vi-key'
 #--------------------nvim-----------------------------
 alias v='nvim'
 alias e='nvim'
@@ -11,7 +13,6 @@ alias cls='clear'
 #--------------------------apps----------------------------
 alias fm='ranger'
 alias b='btop'
-alias net='speedtest'
 
 #------------------------dnf------------------------------
 alias sdi='sudo dnf install'
@@ -20,9 +21,9 @@ alias ref='sudo dnf upgrade --refresh'
 alias upg='sudo dnf upgrade '
 
 #------------------------eza------------------------------
-alias lt2='eza --tree --level=3 --icons -a  -lBb '
-alias lt3='eza --tree --level=4 --icons -a  -lBb '
-alias lt='eza --tree --level=2 --icons -a   -lBb '
+alias lt2='eza --tree --icons --level=3 --icons -a  -lBb '
+alias lt3='eza --tree --icons --level=4 --icons -a  -lBb '
+alias lt='eza --tree --icons --level=2 --icons -a   -lBb '
 alias l='eza --icons'
 alias ls='eza --icons'
 alias la='eza --icons -a'
@@ -41,7 +42,6 @@ alias livehost='bun run dev -- -H 192.168.1.8'
 alias zshs='source ~/.zshrc'
 
 #-------------------runners--------------------------
-#
 alias gp='g++'
 alias pp='g++'
 alias cc'gcc'
@@ -56,8 +56,6 @@ alias gpt="web_search gpt "
 alias stack="stackoverflow"
 #-----------------------------scripts-------------------------
 alias mdc='mcd() { mkdir "$@" && cd "$@" }; mcd'
-
-setxkbmap -layout us -option ctrl:nocaps
 
 #---------------------------navigation-----------------------------
 alias obs="cd ~/obsidian/ && nvim "

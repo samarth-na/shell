@@ -2,15 +2,15 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 export PATH=$PATH:/usr/bin
 export ZSH="$HOME/.oh-my-zsh"
+
+setxkbmap -layout us -option ctrl:nocaps
 # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/amro.omp.json)"
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# Set name of the theme to load --- if set to "random", it will
 export VISUAL=nvim
 export EDITOR=nvim
 
 export PATH=$PATH:$GOPATH/bin
-export GOPATH=$HOME/go
 export PATH="$HOME/.zsh:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
@@ -18,6 +18,7 @@ export PATH="/path/to/google-cloud-sdk/bin:$PATH"
 export PATH=$PATH:$HOME/.local/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export GOPATH=$HOME/go
 
 
 
@@ -47,11 +48,11 @@ bindkey '^[e' my_command
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
- zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+ # zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
- zstyle ':omz:update' frequency 13
+ # zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -92,7 +93,7 @@ bindkey '^[e' my_command
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(sudo history web-search encode64 copypath zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(sudo history web-search encode64 copypath zsh-syntax-highlighting zsh-autosuggestions docker docker-compose git kubectl kubectx)
 
 source $ZSH/oh-my-zsh.sh
 # web_search from terminal
@@ -150,10 +151,10 @@ function web_search() {
 }
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+ export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
@@ -164,16 +165,6 @@ function web_search() {
 
 # Compilation flags
  export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 
 
 source ~/.zsh/aliases/alias.sh
