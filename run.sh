@@ -1,4 +1,7 @@
+#!/bin/bash
+
 #-----...read the comments if you want to understand what is going on...-----
+
 #
 rawInput=$(find ~/projects -type f -mmin -100 -exec ls -lt --time-style=+"%Y-%m-%d %T" {} + | sort -k6,7 | tail -n 1);
 # find the last find saved file and saves that as raw input

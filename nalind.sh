@@ -78,7 +78,17 @@ zstyle ':omz:update' frequency 13
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# NOTE: add aliases here
+# the syntax is:
+# alias <alias name>="<command>"
+
+alias ls='eza --icons'
+
+
+
+# NOTE: these are th plugins added tou can loook for more plugins in the omz github 
 plugins=(sudo history web-search encode64 copypath zsh-syntax-highlighting zsh-autosuggestions)
+
 
 source $ZSH/oh-my-zsh.sh
 # web_search from terminal
@@ -86,7 +96,8 @@ source $ZSH/oh-my-zsh.sh
 function web_search() {
   emulate -L zsh
 
-  # define search engine URLS
+  #NOTE: define search engine URLS
+
   typeset -A urls
   urls=(
     $ZSH_WEB_SEARCH_ENGINES
@@ -141,7 +152,8 @@ function web_search() {
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
+# WARNING: Preferred editor for local and remote sessions
+
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
  else
@@ -156,16 +168,17 @@ function web_search() {
 
 
 
-# bun
-source ~/.zsh/aliases/alias.sh
+
+# WARNING: delete this if you donnt use google-cloud-sdk this 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/samna/google-cloud-sdk/path.zsh.inc' ]; then . '/home/samna/google-cloud-sdk/path.zsh.inc'; fi
-
+# if [ -f '/home/samna/google-cloud-sdk/path.zsh.inc' ]; then . '/home/samna/google-cloud-sdk/path.zsh.inc'; fi
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/samna/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/samna/google-cloud-sdk/completion.zsh.inc'; fi
+# if [ -f '/home/samna/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/samna/google-cloud-sdk/completion.zsh.inc'; fi
 
 eval "$(starship init zsh)"
-
+#--------------------------------------------------------------------
+# bun
+source ~/.zsh/aliases/alias.sh
 # bun completions
 [ -s "/home/samna/.bun/_bun" ] && source "/home/samna/.bun/_bun"%
