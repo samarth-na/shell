@@ -5,6 +5,8 @@ alias v='nvim'
 alias e='nvim'
 alias e.='nvim .'
 alias kn='killall nvim '
+
+alias lg= 'lazygit'
 #-----------------------------clear-------------------------
 alias c='clear'
 alias cl='clear'
@@ -49,7 +51,7 @@ alias py='python'
 alias cct= 'codecrafters test'
 #-------------------web-search------------
 alias pd="web_search phind "
-alias yt="youtube"
+# alias yt="youtube"
 alias px="web_search px"
 alias gpt="web_search gpt "
 alias stack="stackoverflow"

@@ -24,7 +24,7 @@ export GOPATH=$HOME/go
 
 #########################################################
 
-alias run='run.sh'
+alias run='run.bash'
 alias cde='bash ~/.zsh/switchrun.sh'
 
 chpwd() {
