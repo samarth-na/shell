@@ -6,14 +6,15 @@ alias e='nvim'
 alias e.='nvim .'
 alias kn='killall nvim '
 
-alias lg= 'lazygit'
+alias lzg= 'lazygit'
 #-----------------------------clear-------------------------
 alias c='clear'
 alias cl='clear'
 alias cls='clear'
 
 #--------------------------apps----------------------------
-alias fm='ranger'
+alias fm='yazi'
+alias y='yazi'
 alias b='btop'
 
 #------------------------dnf------------------------------
@@ -51,7 +52,6 @@ alias py='python'
 alias cct= 'codecrafters test'
 #-------------------web-search------------
 alias pd="web_search phind "
-# alias yt="youtube"
 alias px="web_search px"
 alias gpt="web_search gpt "
 alias stack="stackoverflow"
@@ -110,25 +110,6 @@ alias play='find ~/Music -type f \( -name "*.mp3" -or -name "*.m4a" -or -name "*
 alias ctp="
  tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index}.#{window_name}-#{pane_current_path}' | fzf-tmux -p | cut -d "." -f 1 |xargs tmux switch-client -t
  "
-function tmuxswitch() {
- ct
-};
-zle -N tmuxswitch
-bindkey '^[d' tmuxswitch
-
-function paneswitch() {
- ctp
-};
-zle -N paneswitch 
-bindkey '^[t' paneswitch
-
-
-pop()
-{
- tmux popup
-};
-zle -N pop
-bindkey '^\' pop
 
 
 

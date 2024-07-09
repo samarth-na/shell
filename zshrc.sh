@@ -169,6 +169,7 @@ export LANG=en_US.UTF-8
 
 source ~/.zsh/aliases/alias.sh
 source ~/.zsh/aliases/gitlias.sh
+source ~/.zsh/aliases/commands.sh
 source ~/gish.sh
 
 # The next line updates PATH for the Google Cloud SDK.
