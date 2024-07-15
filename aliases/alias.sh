@@ -1,29 +1,37 @@
 #-----------------------commands---------------------------
 alias info='info --vi-key'
-#--------------------nvim-----------------------------
+
+#--------------------zoxide--------------------------------
+alias cd='z'
+#--------------------nvim----------------------------------
+
 alias v='nvim'
 alias e='nvim'
 alias e.='nvim .'
 alias kn='killall nvim '
 
-alias lzg= 'lazygit'
-#-----------------------------clear-------------------------
+alias lgit= "lazygit"
+
+alias cd='z'
+alias so='source ~/.zshrc'
+#-----------------------------clear--------------------------
+
 alias c='clear'
 alias cl='clear'
 alias cls='clear'
 
-#--------------------------apps----------------------------
+#--------------------------apps------------------------------
 alias fm='yazi'
 alias y='yazi'
 alias b='btop'
 
-#------------------------dnf------------------------------
+#------------------------dnf---------------------------------
 alias sdi='sudo dnf install'
 alias upd='sudo dnf update'
 alias ref='sudo dnf upgrade --refresh'
 alias upg='sudo dnf upgrade '
 
-#------------------------eza------------------------------
+#------------------------eza---------------------------------
 alias lt2='eza --tree --icons --level=3 --icons -a  -lBb '
 alias lt3='eza --tree --icons --level=4 --icons -a  -lBb '
 alias lt='eza --tree --icons --level=2 --icons -a   -lBb '
@@ -32,7 +40,8 @@ alias l='eza --icons'
 alias la='eza --icons -a'
 alias L='eza --icons -lahBb --git '
 
-#--------------------------tmux----------------------------
+#--------------------------tmux------------------------------
+
 alias t='tmux'
 alias ta='tmux attach-session'
 

@@ -9,6 +9,7 @@ rawInput=$(find ~/projects -type f -mmin -100 -exec ls -lt --time-style=+"%Y-%m-
 #
 #
 input=$(echo "$rawInput" | awk '{print $8}')
+inputwithoutextension="${input%.*}"
 # takes that raw input and extract path 
 # looks like this:-[/home/samna/projects/javascript/jsbasics/arrays.js]  
 #

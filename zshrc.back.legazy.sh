@@ -2,15 +2,14 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 export PATH=$PATH:/usr/bin
 export ZSH="$HOME/.oh-my-zsh"
-# eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/amro.omp.json)"
-# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# Set name of the theme to load --- if set to "random", it will
+setxkbmap -layout us -option ctrl:nocaps
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 export VISUAL=nvim
 export EDITOR=nvim
 
 export PATH=$PATH:$GOPATH/bin
-export GOPATH=$HOME/go
 export PATH="$HOME/.zsh:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
@@ -18,15 +17,13 @@ export PATH="/path/to/google-cloud-sdk/bin:$PATH"
 export PATH=$PATH:$HOME/.local/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+export GOPATH=$HOME/go
 
 
 
 #########################################################
 
-alias run='run.sh'
+alias run='run.bash'
 alias cde='bash ~/.zsh/switchrun.sh'
 
 chpwd() {
@@ -50,11 +47,11 @@ bindkey '^[e' my_command
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
- zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+ # zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
- zstyle ':omz:update' frequency 13
+ # zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -95,7 +92,7 @@ bindkey '^[e' my_command
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(sudo history web-search encode64 copypath zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(sudo history web-search encode64 copypath zsh-syntax-highlighting zsh-autosuggestions docker docker-compose git kubectl kubectx)
 
 source $ZSH/oh-my-zsh.sh
 # web_search from terminal
@@ -115,80 +112,4 @@ function web_search() {
     startpage       "https://www.startpage.com/do/search?q="
     yandex          "https://yandex.ru/yandsearch?text="
     github          "https://github.com/search?q="
-    baidu           "https://www.baidu.com/s?wd="
-    ecosia          "https://www.ecosia.org/search?q="
-    goodreads       "https://www.goodreads.com/search?q="
-    qwant           "https://www.qwant.com/?q="
-    givero          "https://www.givero.com/search?q="
-    stackoverflow   "https://stackoverflow.com/search?q="
-    wolframalpha    "https://www.wolframalpha.com/input/?i="
-    archive         "https://web.archive.org/web/*/"
-    scholar         "https://scholar.google.com/scholar?q="
-    ask             "https://www.ask.com/web?q="
-    youtube         "https://www.youtube.com/results?search_query="
-    phind           "https://www.phind.com/search?q="
-    mdn             "https://developer.mozilla.org/en-US/search?q="
-    gpt             "https://chat.openai.com/"
-    px              "https://www.perplexity.ai/search?q="
-  )
-
-  # check whether the search engine is supported
-  if [[ -z "$urls[$1]" ]]; then
-    echo "Search engine '$1' not supported."
-    return 1
-  fi
-
-  # search or go to main page depending on number of arguments passed
-  if [[ $# -gt 1 ]]; then
-    # build search url:
-    # join arguments passed with '+', then append to search engine URL
-    url="${urls[$1]}$(omz_urlencode ${@[2,-1]})"
-  else
-    # build main page url:
-    # split by '/', then rejoin protocol (1) and domain (2) parts with '//'
-    url="${(j://:)${(s:/:)urls[$1]}[1,2]}"
-  fi
-
-  open_command "$url"
-}
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='nvim'
- fi
-
-# Compilation flags
- export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
-
-# bun 
-source ~/.zsh/aliases/alias.sh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/samna/google-cloud-sdk/path.zsh.inc' ]; then . '/home/samna/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/samna/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/samna/google-cloud-sdk/completion.zsh.inc'; fi
-
- eval "$(starship init zsh)"
-
-# bun completions
-[ -s "/home/samna/.bun/_bun" ] && source "/home/samna/.bun/_bun"
+    baidu           "https://www.b
