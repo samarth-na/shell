@@ -7,6 +7,9 @@ rawInput=$(find ~/projects -type f -mmin -100 -exec ls -lt --time-style=+"%Y-%m-
 # find the last find saved file and saves that as raw input
 # output comes something like this:- [-rw-r--r--. 1 samna samna 531 2023-12-19 00:06:16 /home/samna/projects/javascript/jsbasics/arrays.js]
 #
+time=$(date +"%Y-%m-%d %T")
+# current time
+#
 #
 input=$(echo "$rawInput" | awk '{print $8}')
 inputwithoutextension="${input%.*}"

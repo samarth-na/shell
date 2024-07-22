@@ -1,18 +1,22 @@
 function my_command() {
-  epf
+    Enewtmux
 }
 zle -N my_command
-bindkey '^[e' my_command
+bindkey '^[E' my_command
 
+function OpenFileInNvim() {
+    editfileinneovim
+}
+zle -N OpenFileInNvim
+bindkey '^[e' OpenFileInNvim
 
 function tmuxswitch() {
- ct
+    openDirInNewTmuxWindow
 };
 zle -N tmuxswitch
 bindkey '^[d' tmuxswitch
-
 function paneswitch() {
- ctp
+    changeTmuxPane
 };
 zle -N paneswitch 
 bindkey '^[t' paneswitch
@@ -20,7 +24,7 @@ bindkey '^[t' paneswitch
 
 pop()
 {
- tmux popup
+    tmux popup
 };
 zle -N pop
 bindkey '^\' pop

@@ -11,7 +11,6 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.local/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-alias run='~/.zsh/run.sh'
 
 
 

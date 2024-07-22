@@ -10,9 +10,9 @@ alias e='nvim'
 alias e.='nvim .'
 alias kn='killall nvim '
 
-alias lgit= "lazygit"
 
 alias cd='z'
+
 alias so='source ~/.zshrc'
 #-----------------------------clear--------------------------
 
@@ -69,57 +69,23 @@ alias mdc='mcd() { mkdir "$@" && cd "$@" }; mcd'
 
 #---------------------------navigation-----------------------------
 alias obs="cd ~/obsidian/ && nvim "
-alias ef="fd --hidden --type f | fzf --reverse | xargs -o nvim"
-# alias sd='fd --hidden --type d | fzf --preview "eza -lah --icons {} "
-# '
-alias epf=" fd --type f -H |fzf --reverse --preview 'bat --color=always --style=numbers --line-range=:100 {}'| xargs nvim {}
 
-"
-alias pf=" fd --type f |fzf --reverse --preview 'bat --color=always --style=numbers --line-range=:100 {}'
-"
 
-alias ec='fd --hidden --type f --max-depth=1 | fzf-tmux -p --reverse | xargs -o nvim'
-#
-alias fl2='fd --max-depth=2 |fzf --reverse '
+
+
+alias editfileinneovim='fd --type f --max-depth=1 | fzf  --reverse | xargs -o nvim'
+alias openDirInNewTmuxWindow='fd --type=d | fzf | xargs -I {} tmux new-window -c {}'
+alias Enewtmux='fd --type f --max-depth=1 |fzf-tmux -p | xargs -I {} tmux new-window nvim {}'
+
 
 alias play='find ~/Music -type f \( -name "*.mp3" -or -name "*.m4a" -or -name "*.webm" \)| fzf-tmux --reverse -p |xargs -I {} vlc "{}"
 '
-alias conf=' cd $( find ~/.config   -type d  |fzf --reverse --preview "lt -lBb  {}"
-)'
-alias jd=' cd $( find -type d  |fzf-tmux -p --reverse  --preview "lt -lBb  {}"
-)'
-alias jp=' cd $( find  ~/projects -type d  |fzf-tmux -p --reverse  --preview "lt -lBb  {}"
-)'
-alias dnd=' cd $( find ~/Downloads -type d  |fzf --reverse --preview "lt -lBb -- {}"
-)'
-alias proj=' cd $( find ~/projects -type d  |fzf --reverse --preview "lt -lBb -- {}"
-)'
-alias econf='find ~/.config  -type f | fzf --reverse --preview "bat --color=always --style=numbers --line-range=:100 {}"|xargs nvim {}'
-
-alias cdd=' cd $( fd -H --type d --max-depth=1 |fzf-tmux --reverse -p -w --preview " eza -laBb  --no-permissions --no-time --no-user {}")'
-
+alias changeTmuxPane="
+ tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index}.#{window_name}-#{pane_current_path}' | fzf-tmux -p | cut -d "." -f 1 |xargs tmux switch-client -t
+ "
 alias ct='
 tmux list-windows -a -F "#S:#I-#W" | fzf-tmux -p | cut -d "-" -f 1 | xargs tmux switch-client -t
 '
-alias ef="fd --hidden --type f | fzf --reverse | xargs -o nvim"
-# alias sd='fd --hidden --type d | fzf --preview "eza -lah --icons {} "
-# '
-alias epf=" fd --type f -H |fzf --reverse --preview 'bat --color=always --style=numbers --line-range=:100 {}'| xargs nvim {}
-
-"
-alias pf=" fd --type f |fzf --reverse --preview 'bat --color=always --style=numbers --line-range=:100 {}'
-"
-
-alias ec='fd --hidden --type f --max-depth=1 | fzf-tmux -p --reverse | xargs -o nvim'
-#
-alias fl2='fd --max-depth=2 |fzf --reverse '
-
-alias play='find ~/Music -type f \( -name "*.mp3" -or -name "*.m4a" -or -name "*.webm" \)| fzf-tmux --reverse -p |xargs -I {} vlc "{}"
-'
-alias ctp="
- tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index}.#{window_name}-#{pane_current_path}' | fzf-tmux -p | cut -d "." -f 1 |xargs tmux switch-client -t
- "
-
 
 
 # fdd() {

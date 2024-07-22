@@ -1,5 +1,5 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$HOME/.zsh:$PATH"
+export PATH=$HOME/.zsh:$PATH
 
 setxkbmap -layout us -option ctrl:nocaps
 
@@ -7,23 +7,23 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.zsh/scripts
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/opt/nvim/
 
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
-export PATH="/usr/local/bin:$PATH"
-export PATH="/path/to/google-cloud-sdk/bin:$PATH"
+export PATH=/usr/local/bin:$PATH
 
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 export GOPATH=$HOME/go
-export ARCHFLAGS="-arch x86_64"
-export LANG=en_US.UTF-8
-export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH=/usr/local/man:$MANPATH
 export FZF_ALT_C_OPTS="--preview 'exa -lah --icons {}'"
+export ARCHFLAGS="-arch x86_64"
+export LANG="en_US.UTF-8"
 
-
-alias run='run.sh'
+alias run='run.py'
 
 
 # Run the command when Alt+E is pressed
@@ -163,6 +163,8 @@ if [ -f '/home/samna/google-cloud-sdk/path.zsh.inc' ]; then . '/home/samna/googl
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/samna/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/samna/google-cloud-sdk/completion.zsh.inc'; fi
 
+export PATH="/path/to/google-cloud-sdk/bin:$PATH"
+
 
 [ -s "/home/samna/.bun/_bun" ] && source "/home/samna/.bun/_bun"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -171,5 +173,4 @@ if [ -f '/home/samna/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/samna
  eval "$(starship init zsh)"
  eval "$(zoxide init zsh)"
 
-export PATH="$PATH:/opt/nvim/"
 # bun completions
