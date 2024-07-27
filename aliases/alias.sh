@@ -35,7 +35,6 @@ alias upg='sudo dnf upgrade '
 alias lt2='eza --tree --icons --level=3 --icons -a  -lBb '
 alias lt3='eza --tree --icons --level=4 --icons -a  -lBb '
 alias lt='eza --tree --icons --level=2 --icons -a   -lBb '
-alias tree='eza --tree --icons'
 alias l='eza --icons'
 alias la='eza --icons -a'
 alias L='eza --icons -lahBb --git '
@@ -74,7 +73,7 @@ alias obs="cd ~/obsidian/ && nvim "
 
 
 alias editfileinneovim='fd --type f --max-depth=1 | fzf  --reverse | xargs -o nvim'
-alias openDirInNewTmuxWindow='fd --type=d | fzf | xargs -I {} tmux new-window -c {}'
+alias openDirInNewTmuxWindow='fd --type=d |fzf-tmux -p  | xargs -I {} tmux new-window -c {}'
 alias Enewtmux='fd --type f --max-depth=1 |fzf-tmux -p | xargs -I {} tmux new-window nvim {}'
 
 
